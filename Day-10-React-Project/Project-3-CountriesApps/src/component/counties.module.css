@@ -1,0 +1,7 @@
+.MainDegign {
+    display: grid !important;
+    grid-template-columns: auto auto auto auto;
+    gap: 10px;
+    padding: 19px;
+    margin: 10px;
+}

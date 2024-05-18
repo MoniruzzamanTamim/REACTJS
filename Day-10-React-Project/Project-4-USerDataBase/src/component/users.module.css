@@ -1,0 +1,51 @@
+
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.formdesign div{
+display: flex;
+justify-content: space-between;
+margin: 10px 0;
+}
+
+.formdesign {
+    width: 362px;
+    margin: auto;
+  
+}
+
+.formdesign div button {
+    width: 100%;
+    border: 1px solid black;
+    margin: 15px 0 35px 0;
+}
+.btn{
+    cursor: pointer;
+}
+
+.searchdesign{
+    display: flex;
+    margin: 10px 0;
+    align-items: center;
+}
+
+.searchdesign input{
+    padding: 8px ;
+width: 60%;
+    margin-left: 20px ;
+}
