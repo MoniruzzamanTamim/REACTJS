@@ -12,7 +12,7 @@ const child = ({placeholder}, receiveRef) => {
 <br />
 <br />
 
-<input type="text" name='name' placeholder= {placeholder}  ref={receiveRef}  />   
+<input type="text" name='name' placecdholder= {placeholder}  ref={receiveRef}  />   
     </div>
   )
 }
