@@ -29,7 +29,7 @@ const reducer =(state, action)=>{
     return{
         ...state,
        userDatas: RemoveData,
-       
+
         ItemMessage: " User Data is REmoved",
     }
 }

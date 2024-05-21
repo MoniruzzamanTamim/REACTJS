@@ -4,6 +4,8 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import BasicReducer from './Component/BasicReducer'
 import Practice from './Component/practise'
+import Increment from './Component/Increment'
+import ApiCalling from './Component/ApiCalling'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -12,6 +14,8 @@ function App() {
     <>
       <BasicReducer/>
       <Practice/>
+      <Increment/>
+      <ApiCalling/>
         
     </>
   )
