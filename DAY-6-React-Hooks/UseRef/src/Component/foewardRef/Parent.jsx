@@ -1,5 +1,6 @@
 import React, {useRef, useEffect} from 'react'
-// import Child from './Child'
+import Child from './Child'
+import BasicRef from '../Practics/BasicRef';
 
 const Parent = () => {
   
@@ -12,7 +13,11 @@ const Parent = () => {
     <div>
 
       <Child ref={UserRef}   placeholder = "This is Fordward Ref"/>
+<br />
+<h1>This is secont time practics part</h1>
+      <BasicRef/>
     </div>
+
   )
 }
 
