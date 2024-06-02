@@ -8,6 +8,10 @@ import About from './Pages/About/About';
 import Contact from './Pages/Contact/Contact';
 import ErrorPage from './Pages/ErrorPage/ErrorPage';
 import Header from './Pages/Header/Header';
+import Blogs from './Pages/Blog/Blogs';
+import Blog from './Pages/Blog/Blog';
+
+
 
 
 
@@ -24,6 +28,9 @@ function App() {
         <Route path='/about' element ={<About/>} />
         <Route path='/contact' element ={<Contact/>} />
         <Route path='/*' element ={<ErrorPage/>} />
+        <Route path='/blogs' element ={<Blogs/>} />
+        <Route path='/blogs/:title' element ={<Blog/>} />
+
       
     </Routes>
     </BrowserRouter>
