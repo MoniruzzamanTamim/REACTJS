@@ -8,8 +8,10 @@ import About from './Pages/About/About';
 import Contact from './Pages/Contact/Contact';
 import ErrorPage from './Pages/ErrorPage/ErrorPage';
 import Header from './Pages/Header/Header';
-import Blogs from './Pages/Blog/Blogs';
-import Blog from './Pages/Blog/Blog';
+import Blogs from './Pages/DynamicRouting/Blogs';
+import Blog from './Pages/DynamicRouting/Blog';
+import UseBlogs from './useLocation/Blogs';
+import UseBlog from './useLocation/Blog';
 
 
 
@@ -30,6 +32,8 @@ function App() {
         <Route path='/*' element ={<ErrorPage/>} />
         <Route path='/blogs' element ={<Blogs/>} />
         <Route path='/blogs/:title' element ={<Blog/>} />
+        <Route path='/uselocation' element ={<UseBlogs/>} />
+        <Route path='/uselocation/:title' element ={<UseBlog/>} />
 
       
     </Routes>

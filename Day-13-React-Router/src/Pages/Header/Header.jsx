@@ -10,8 +10,9 @@ const Header = () => {
           <li><NavLink to={"/contact"}>Contact</NavLink></li>
           <li><NavLink to={"/*"}>404ERROR</NavLink></li>
           <li><NavLink to={"/blogs"}>Blogs</NavLink></li>
-          <li></li>
-          <li></li>
+          <li><NavLink to={"/uselocation"}>UseLocation Blogs</NavLink></li>
+       
+          
         </ul>
     </div>
   )
