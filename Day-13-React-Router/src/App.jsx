@@ -12,6 +12,9 @@ import Blogs from './Pages/DynamicRouting/Blogs';
 import Blog from './Pages/DynamicRouting/Blog';
 import UseBlogs from './useLocation/Blogs';
 import UseBlog from './useLocation/Blog';
+import Users from './QueryRoute/Users';
+import ProtectedVallue from './ProtectedRoute/ProtectedVallue';
+import Proteced from './ProtectedRoute/Proteced';
 
 
 
@@ -19,11 +22,13 @@ import UseBlog from './useLocation/Blog';
 
 function App() {
 
+  const [isLogin, setIslogin]=useState(false)
 
   return (
     <>
     <BrowserRouter>
     <Header/>
+    {isLogin? <button onClick={()=>setIslogin(!isLogin) }>Logout</button> : <button onClick={()=>setIslogin(!isLogin) }>LogIN</button> }
     <Routes>
         <Route path='/' element ={<Home/>} />
         <Route path='/home' element ={<Home/>} />
@@ -34,6 +39,12 @@ function App() {
         <Route path='/blogs/:title' element ={<Blog/>} />
         <Route path='/uselocation' element ={<UseBlogs/>} />
         <Route path='/uselocation/:title' element ={<UseBlog/>} />
+        <Route path='/users' element ={<Users/>} />
+        <Route path='/protecedvalue' element ={<Proteced isLogin={isLogin}>
+                        <ProtectedVallue/>
+        </Proteced>} />
+
+        
 
       
     </Routes>
