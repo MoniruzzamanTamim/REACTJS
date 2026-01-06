@@ -1,0 +1,7 @@
+.todoDesign {
+    background-color: chartreuse;
+    padding: 4px 25px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+}

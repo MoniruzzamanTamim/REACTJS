@@ -1,0 +1,30 @@
+
+
+.mainback{
+   
+ 
+    width: 700px;
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid white;
+    margin: 16px 0;
+    padding: 0 15px;
+}
+.buttondesign {
+    background-color: aqua;
+    width: 83px;
+    padding: 0 !important;
+    font-size: 25px;
+    height: 37px !important;
+   
+    border: 1.5px solid white;
+}
+
+.buttondesign:hover{
+    border-color: white;
+}
+
