@@ -4,6 +4,7 @@ const BASICUSEEFFECT = () => {
 
 
  const [count, setCount] = useState(0)
+ const [time,seTime]= useState(Date.now())
 
 //  UseEffect Running Multiple Timen When Page Render 
 
@@ -11,7 +12,8 @@ const BASICUSEEFFECT = () => {
    
     console.log("UseEffect Running Multiple Timen When Page Render ");
     document.title = `you Clicked  ${count} Times `
-
+    console.log(time);
+    
  })
 
 //  UseEffect Running Only First Time Page Rendaring 
@@ -32,6 +34,9 @@ const BASICUSEEFFECT = () => {
  },[count ])
 
 
+ const Tick =()=>{
+   setInterval()
+ }
 
 
     return (

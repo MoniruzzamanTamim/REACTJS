@@ -7,19 +7,15 @@ const formControl = () => {
 
     const textfield = (e)=>{
         setName(e.target.value)
-        
     }
 
   
     const [email, setEmail]= useState('')
-
     const emailfield = (e)=>{
         setEmail(e.target.value);
-       
     }
 
     const [password, setPassword]= useState('')
-
     const passwordfield = (e)=>{
         setPassword(e.target.value);
         
@@ -27,17 +23,12 @@ const formControl = () => {
 
     const SubmitData = (e)=>{
         e.preventDefault()
-    
-
         let userInfo={
             name,
             email,
             password
         }
-
         console.log(userInfo);
-
-       
     }
 
            

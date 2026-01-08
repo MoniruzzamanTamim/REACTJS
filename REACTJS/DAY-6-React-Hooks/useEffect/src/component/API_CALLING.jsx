@@ -17,7 +17,6 @@ fetch('https://jsonplaceholder.typicode.com/posts')
 .then((res)=>{
     if(!res.ok) {
         throw Error(`Your API not Connect, ${res.status} Error Running`);
-       
     }else{
         return res.json();
     }
