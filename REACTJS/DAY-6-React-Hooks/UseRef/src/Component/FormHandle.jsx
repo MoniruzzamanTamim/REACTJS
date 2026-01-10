@@ -21,15 +21,14 @@ const handlevalue =(e)=>{
   return (
     <div>
 
- 
-                         <form onClick={handlevalue}>
-                            <div>
-                                {/* 3==> Link UseRef */}
-                            <input type="text" name="name" id="name"  ref={userNameRef}/>
-                            </div>
-                            <div><input type="password" name="password" id="password" ref={userPasswordRef} /></div>
-                            <button type='submit'>Submit Data</button>
-                         </form>
+      <form onClick={handlevalue}>
+        <div>
+          {/* 3==> Link UseRef */}
+          <input type="text" name="name" id="name"  ref={userNameRef}/>
+          </div>
+          <div><input type="password" name="password" id="password" ref={userPasswordRef} /></div>
+          <button type='submit'>Submit Data</button>
+      </form>
 
     </div>
   )

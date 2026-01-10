@@ -19,8 +19,6 @@ const BasicRef = () => {
         <input type="text" name="" id="" ref={userNameRef} />
         <button type="submit" onClick={HandleClick}>Submit input </button>
         <br /><br />
-        
-
         <ParentComponent/>
       </div>
          

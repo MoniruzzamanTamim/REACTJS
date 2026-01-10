@@ -11,7 +11,6 @@ const Parent = () => {
 
   return (
     <div>
-
       <Child ref={UserRef}   placeholder = "This is Fordward Ref"/>
 <br />
 <h1>This is secont time practics part</h1>

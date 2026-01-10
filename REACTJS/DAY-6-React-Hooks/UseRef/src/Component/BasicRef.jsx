@@ -7,19 +7,15 @@ export const BasicRef = () => {
 
    useEffect(()=>{
     basicRef.current.focus();
-  
    },[])
 
   return (
     <div>
-
-<h1>Basic UseREF</h1>
-                           <form action="">
-                            <input type="text" name="" id=""  ref={basicRef}/>
-                            </form>  
-
-                            <FormHandle/>
-
+        <h1>Basic UseREF</h1>
+        <form action="">
+          <input type="text" name="" id=""  ref={basicRef}/>
+        </form>  
+       <FormHandle/>
     </div>
   )
 }
