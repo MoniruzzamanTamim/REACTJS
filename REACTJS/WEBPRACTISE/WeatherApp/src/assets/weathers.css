@@ -1,0 +1,8 @@
+body.dark .card {
+  background-color: red;
+  color: white;
+}
+
+body, .card {
+  transition: all 0.3s ease;
+}

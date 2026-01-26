@@ -1,0 +1,211 @@
+আমি তিন ভাগে বলব:
+
+1️⃣ কোডে কী হচ্ছে (flow)
+2️⃣ কেন optimization কাজ করছে
+3️⃣ কোথায় কী শিখলে (mental model)
+
+🔹 1️⃣ Parent Component – Deep Explanation
+👉 State
+const [count1, setCount1] = useState(0)
+const [count2, setCount2] = useState(10)
+
+
+👉 দুইটা আলাদা state
+👉 যেকোনো একটাতে change হলেই Parent re-render হবে
+
+⚠️ React rule:
+
+Parent render হলে child render হয় (by default)
+
+এই সমস্যাই আমরা optimize করছি।
+
+👉 useCallback – incrementOne
+const incrementOne = useCallback(() => {
+  setCount1((pre) => pre + 1)
+}, [])
+
+এখানে কী হচ্ছে?
+
+useCallback function টাকে মনে রাখছে
+
+[] মানে → function কখনো change হবে না
+
+একই function reference পাঠানো হচ্ছে Button এ
+
+🧠 Beginner ভাবনা:
+
+“এই function টা React মনে রাখ, বারবার নতুন বানিও না”
+
+👉 useCallback – incrementTwo
+const incrementTwo = useCallback(() => {
+  setCount2((pre) => pre + 10)
+}, [])
+
+
+✔ একদম ঠিক
+✔ না হলে Button component অযথা render হতো
+
+👉 useMemo – costly calculation
+const calculate = useMemo(() => {
+  let i = 0;
+  while (i < 1000000000) i += 1; // costly
+  return count1 % 2 === 0;
+}, [count1])
+
+এখানে আসল শিক্ষা 🔥
+
+❌ useMemo ছাড়া কী হতো?
+
+Parent render হলেই
+
+এই while loop আবার চলতো
+
+App slow হয়ে যেত
+
+✔ useMemo কী করছে?
+
+result টা cache করে রাখছে
+
+যতক্ষণ count1 change না হয়
+
+calculation আর চলবে না
+
+🧠 সহজ কথা:
+
+“আগের result থাকলে আবার হিসাব করিস না”
+
+👉 JSX অংশ
+<Title />
+
+<ShowItem title="Count 1" count={count1} />
+<Button btnclick={incrementOne}>Increment 1</Button>
+{calculate ? 'Even' : 'odd'}
+
+<ShowItem title="Count 2" count={count2} />
+<Button btnclick={incrementTwo}>Increment 2</Button>
+
+এখানে কী observe করবে?
+Increment 1 click করলে:
+
+Parent render
+
+Count 1 render
+
+costly calculation চলবে
+
+Count 2 render হবে না ❌
+
+Title render হবে না ❌
+
+Increment 2 click করলে:
+
+Parent render
+
+Count 2 render
+
+calculation চলবে না ❌
+
+Count 1 render হবে না ❌
+
+👉 এটাই optimization 💯
+
+🔹 2️⃣ ShowItem Component
+function ShowItem({ title, count }) {
+  console.log(`Rendering ${title}`);
+  return (
+    <>
+      <h1>{title}</h1>
+      <span>{count}</span>
+    </>
+  )
+}
+
+export default React.memo(ShowItem)
+
+এখানে কী শিখছো?
+
+React.memo props compare করে
+
+title বা count change না হলে
+
+component render হবে না
+
+🧠 Beginner rule:
+
+Same props = no render
+
+🔹 3️⃣ Title Component
+function Title() {
+  console.log("Title Rendering...");
+  return (
+    <>
+      <h1>Title</h1>
+      <button onClick={() => console.log("Title Clicked")}>
+        onclick
+      </button>
+    </>
+  )
+}
+
+export default React.memo(Title)
+
+Important concept
+
+Title কোনো props নেয় না
+
+Parent যতবারই render হোক
+
+Title একবারই render হবে
+
+👉 React.memo এখানে perfect example
+
+🔹 4️⃣ Button Component
+function Button({ children, btnclick }) {
+  console.log(`rendering... ${children}`);
+  return (
+    <div>
+      <button onClick={btnclick}>{children}</button>
+    </div>
+  )
+}
+
+export default React.memo(Button)
+
+কেন useCallback দরকার ছিল?
+
+function props (btnclick)
+
+function reference change হলে
+
+React.memo কাজ করত না
+
+✔ useCallback → same function
+✔ Button unnecessary render বন্ধ
+
+🧠 পুরো Project এর Mental Model
+
+এক লাইনে মনে রাখো:
+
+State change
+→ Parent render
+→ React.memo props check
+→ useCallback same function
+→ useMemo cached value
+→ only needed component render
+
+🏆 তুমি কী level এ পৌঁছেছো?
+
+✔ useState clear
+✔ useCallback correct
+✔ useMemo correct
+✔ React.memo real use
+✔ performance thinking
+
+👉 তুমি এখন strong beginner → early intermediate
+
+🔥 Small Improvement (Optional)
+<h1>Main Component</h1>
+
+
+এটাও চাইলে আলাদা memoized component বানাতে পারো
+(but beginner হিসেবে দরকার নেই)

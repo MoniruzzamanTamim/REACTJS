@@ -8,8 +8,8 @@ import About from './Pages/About/About';
 import Contact from './Pages/Contact/Contact';
 import ErrorPage from './Pages/ErrorPage/ErrorPage';
 import Header from './Pages/Header/Header';
-import Blogs from './Pages/DynamicRouting/Blogs';
-import Blog from './Pages/DynamicRouting/Blog';
+import Blogs from './DynamicRouting/Blogs';
+import Blog from './DynamicRouting/Blog';
 import UseBlogs from './useLocation/Blogs';
 import UseBlog from './useLocation/Blog';
 import Users from './QueryRoute/Users';
@@ -28,7 +28,9 @@ function App() {
     <>
     <BrowserRouter>
     <Header/>
+    {/* Navlink  */}
     {isLogin? <button onClick={()=>setIslogin(!isLogin) }>Logout</button> : <button onClick={()=>setIslogin(!isLogin) }>LogIN</button> }
+
     <Routes>
         <Route path='/' element ={<Home/>} />
         <Route path='/home' element ={<Home/>} />

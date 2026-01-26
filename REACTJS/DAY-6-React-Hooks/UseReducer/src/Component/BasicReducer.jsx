@@ -4,11 +4,9 @@ const UserData = [
     {id : 1, Name: "Tamim"},
     {id : 2, Name: "Tamim"},
     {id : 3, Name: "Tamim"}
-
 ];
 // Reducer Function 
 const reduce =(state, action)=>{
-
     if (action.type == "ADD") {
          const AlluserData = [...state.useInformation, action.payload]
          return{
@@ -16,7 +14,6 @@ const reduce =(state, action)=>{
             useInformation: AlluserData,
             isOpen : true,
               modalTex: "USer Input is Add"
-
          }
     }
     if (action.type == "REMOVE") {

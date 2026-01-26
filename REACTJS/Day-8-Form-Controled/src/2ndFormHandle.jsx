@@ -3,40 +3,27 @@ import { useState } from 'react'
 
 function SecondForm() {
   const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
  
-
   const nameVallueHandle= (e)=>{
     setName(e.target.value);
   }
-   
-
-
-
-    const [email, setEmail] = useState('')
-   
   
-    const emailVallueHandle= (e)=>{
+  const emailVallueHandle= (e)=>{
         setEmail(e.target.value);
-    }
-     
+  }
   
-    const submitData =(e)=>{
-           e.preventDefault();
+  const submitData =(e)=>{
+       e.preventDefault();
            
-           const formvallueset = {
-            name,
-            email
-           }
-           console.log(formvallueset);
-    }
-  
-  
- 
-
+      const formvallueset = {
+        name,
+        email
+        }
+      console.log(formvallueset);
+  }
   return (
     <>
-
-
     <form action="" onSubmit={submitData}>
          <div>
             <label htmlFor="name" name="name">Name : </label>
@@ -51,9 +38,8 @@ function SecondForm() {
             <button type="submit" >Submit Data</button>
          </div>
     </form>
-     
+    
     </>
   )
 }
-
 export default SecondForm;

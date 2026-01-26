@@ -6,6 +6,7 @@ import ParentFunction from './function-props/ParentFunction'
 import ParentAssignment from './Assignment-1/ParentAssignment'
 import Products from './Assignment-2/Products'
 import ClassComponent from './classComponent/ClassComponent'
+import ParentPropsType from './propsType/Parent'
 
 
 function Allcomponent() {
@@ -18,6 +19,8 @@ function Allcomponent() {
     <ParentAssignment/>
     <Products/>
     <ClassComponent/>
+    <ParentPropsType/>
+
 
    </>
 

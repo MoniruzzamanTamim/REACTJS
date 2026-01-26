@@ -2,17 +2,17 @@ import { useState } from 'react'
 
 
 function BasicForm() {
-  const [count, setCount] = useState('')
+  const [name, setName] = useState('')
  
 
   const nameVallueHandle= (e)=>{
-    setCount(e.target.value);
+    setName(e.target.value);
   }
    
 
   const submitData =(e)=>{
          e.preventDefault();
-         console.log(count);
+         console.log(name);
   }
  
 
@@ -20,7 +20,7 @@ function BasicForm() {
     <>
 
 
-    <form action="" onSubmit={submitData}>
+    <form action="" onSubmit={submitData} style={{display:'flex', justifyContent:'center',alignItems:'center'}}>
          <div>
             <label htmlFor="name" name="name">Name : </label>
             <input type="text" name="name"   onChange={nameVallueHandle} />

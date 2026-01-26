@@ -9,7 +9,7 @@ function FiveForm() {
 
   const valluehandle = (e)=>{
     const fileldName = e.target.name;
-    setFormVallue( {...formVallue, [e.target.name]:e.target.value})  
+    setFormVallue( {...formVallue, [fileldName]:e.target.value})  
   }
 
   const vallueSubmit = (e)=>{

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React,{useState} from 'react'
 import { BlogsData } from './BlogsData'
 import {Link} from 'react-router-dom'
@@ -21,7 +22,7 @@ const Blogs = () => {
     <section>
         {blogsdata.map((data)=>{
             const {id, title, body}= data
-            return <article>
+            return <article key={id}>
                 <span>{id}</span>
                 <h4>{title}</h4>
                 <p>{trancate(body, 100)}</p>

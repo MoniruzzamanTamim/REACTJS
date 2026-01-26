@@ -15,7 +15,7 @@ const ParentComponent = () => {
         
         <h3>This is Parent Component</h3>
         <br />
-         <Context.Provider value ={{userData,location} }> 
+         <Context.Provider value ={{userData,location}}> 
           <ChildComponent2/>
         </Context.Provider>
     </>
